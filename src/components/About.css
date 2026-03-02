@@ -1,3 +1,6 @@
+/* ========================= */
+/* ABOUT SECTION - MAIN STYLING */
+/* ========================= */
 .about-container {
   min-height: 100vh;
   display: flex;
@@ -7,9 +10,10 @@
   padding: 60px 10%;
   background: #111827;
   color: white;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
-/* LEFT SIDE */
+/* ----------------- LEFT SIDE ----------------- */
 .about-leftbox {
   flex: 1;
   text-align: center;
@@ -24,9 +28,10 @@
 .about-leftbox img {
   width: 180px;
   margin-bottom: 25px;
+  max-width: 100%; /* Makes image responsive */
 }
 
-/* SKILL BUTTONS */
+/* ----------------- SKILL BUTTONS ----------------- */
 .about-btn-container {
   display: flex;
   justify-content: center;
@@ -48,7 +53,7 @@
   background: #eab308;
 }
 
-/* RIGHT SIDE */
+/* ----------------- RIGHT SIDE ----------------- */
 .about-rightbox {
   flex: 1;
 }
@@ -57,4 +62,82 @@
   font-size: 18px;
   line-height: 1.7;
   max-width: 500px;
+  margin: 0 auto;
+}
+
+/* ========================= */
+/* RESPONSIVE STYLING */
+/* ========================= */
+
+/* Tablets - 1024px and below */
+@media (max-width: 1024px) {
+  .about-container {
+    gap: 40px;
+    padding: 50px 5%;
+  }
+
+  .about-leftbox h1 {
+    font-size: 32px;
+  }
+
+  .about-rightbox p {
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  .about-leftbox img {
+    width: 150px;
+  }
+}
+
+/* Mobile - 768px and below */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 5%;
+  }
+
+  .about-leftbox h1 {
+    font-size: 28px;
+  }
+
+  .about-leftbox img {
+    width: 120px;
+  }
+
+  .about-btn-container button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .about-rightbox p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+
+/* Small Mobile - 480px and below */
+@media (max-width: 480px) {
+  .about-leftbox h1 {
+    font-size: 24px;
+  }
+
+  .about-leftbox img {
+    width: 100px;
+  }
+
+  .about-btn-container {
+    gap: 10px;
+  }
+
+  .about-btn-container button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .about-rightbox p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
 }

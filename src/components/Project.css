@@ -1,19 +1,21 @@
+/* CONTAINER */
 .project-container {
   min-height: 100vh;
-  padding: 60px 10%;
+  padding: 60px 8%;
   background: #0f172a;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
+  gap: 35px;
 }
 
 /* CARD */
 .project-card {
-  background: white;
+  background: #ffffff;
   padding: 25px;
-  border-radius: 15px;
+  border-radius: 18px;
   text-align: center;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 .project-card:hover {
@@ -32,7 +34,7 @@
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
   margin-bottom: 20px;
 }
 
@@ -40,15 +42,49 @@
 .project-card button {
   padding: 12px 25px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   background: #111827;
   color: white;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .project-card button:hover {
   background: #fbbf24;
   color: black;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .project-container {
+    padding: 50px 6%;
+    gap: 25px;
+  }
+
+  .project-card {
+    padding: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .project-container {
+    padding: 40px 5%;
+    grid-template-columns: 1fr;
+  }
+
+  .project-card h1 {
+    font-size: 18px;
+  }
+
+  .project-card img {
+    height: 160px;
+  }
+
+  .project-card button {
+    width: 100%;
+  }
 }

@@ -5,17 +5,21 @@
   justify-content: center;
   align-items: center;
   background: #0f172a;
+  padding: 20px; /* mobile ke liye spacing */
 }
 
 /* Clock Box */
 .clock {
-  font-size: 60px;
+  font-size: clamp(28px, 8vw, 60px); /* Responsive font */
   font-weight: bold;
   color: #fbbf24;
   background: #111827;
-  padding: 40px 60px;
+  padding: clamp(20px, 5vw, 40px) clamp(30px, 6vw, 60px);
   border-radius: 15px;
-  letter-spacing: 4px;
+  letter-spacing: clamp(2px, 1vw, 4px);
   box-shadow: 0 0 25px rgba(251, 191, 36, 0.5);
   font-family: 'Courier New', monospace;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
 }

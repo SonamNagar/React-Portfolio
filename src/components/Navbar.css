@@ -1,3 +1,4 @@
+/* Navbar Container */
 .navbar-container {
   width: 100%;
   background-color: #111827;
@@ -13,6 +14,7 @@
   margin: auto;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 40px;
   list-style: none;
 }
@@ -36,4 +38,36 @@
   color: #fbbf24;
   border-bottom: 2px solid #fbbf24;
   padding-bottom: 4px;
+}
+
+
+/* ========================= */
+/* Responsive Design */
+/* ========================= */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .navbar-container ul {
+    gap: 25px;
+  }
+
+  .navbar-container ul li a {
+    font-size: 15px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 15px 0;
+  }
+
+  .navbar-container ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .navbar-container ul li a {
+    font-size: 14px;
+  }
 }

@@ -1,5 +1,3 @@
-/* ================= CONTACT SECTION ================= */
-
 .contact-container {
   min-height: 100vh;
   padding: 60px 10%;
@@ -16,6 +14,7 @@
 
 .contact-leftbox {
   flex: 1;
+  min-width: 280px;
 }
 
 .contact-leftbox h3 {
@@ -46,6 +45,7 @@
 
 .contact-form {
   flex: 1;
+  min-width: 280px;
   background: #111827;
   padding: 35px;
   border-radius: 12px;
@@ -114,6 +114,7 @@
   gap: 25px;
   margin-bottom: 20px;
   padding: 0;
+  flex-wrap: wrap;
 }
 
 .footer-links a {
@@ -129,4 +130,79 @@
 .footer-copy {
   font-size: 14px;
   opacity: 0.8;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .contact-leftbox,
+  .contact-form {
+    width: 100%;
+  }
+
+  .contact-form {
+    padding: 30px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .contact-container {
+    padding: 40px 5%;
+  }
+
+  .contact-leftbox h3,
+  .contact-form h3 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .contact-item {
+    font-size: 14px;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+  }
+
+  .contact-form button {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .footer {
+    padding: 30px 5%;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-name {
+    font-size: 18px;
+  }
+
+  .footer-role {
+    font-size: 14px;
+  }
+
+  .footer-copy {
+    font-size: 12px;
+  }
 }

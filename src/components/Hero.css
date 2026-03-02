@@ -7,11 +7,13 @@
   padding: 60px 10%;
   background: #0f172a;
   color: white;
+  flex-wrap: wrap; /* Important for responsiveness */
 }
 
 /* LEFT SIDE */
 .hero-leftbox {
   flex: 1;
+  min-width: 280px;
 }
 
 .hero-leftbox h1 {
@@ -21,7 +23,6 @@
 
 .hero-highlight {
   color: #fbbf24;
- 
   padding: 4px 10px;
   border-radius: 6px;
 }
@@ -67,9 +68,66 @@
   flex: 1;
   display: flex;
   justify-content: center;
+  min-width: 280px;
 }
 
 .hero-rightbox img {
-  width: 280px;   /* Image thodi chhoti */
+  width: 280px;
+  max-width: 100%;
   border-radius: 20px;
+}
+
+/* ========================= */
+/* ✅ Tablet Responsive */
+/* ========================= */
+@media (max-width: 992px) {
+  .hero-container {
+    gap: 40px;
+    padding: 50px 5%;
+  }
+
+  .hero-leftbox h1 {
+    font-size: 38px;
+  }
+
+  .hero-leftbox p {
+    font-size: 16px;
+  }
+}
+
+/* ========================= */
+/* ✅ Mobile Responsive */
+/* ========================= */
+@media (max-width: 600px) {
+  .hero-container {
+    flex-direction: column-reverse; /* Image neeche chali jayegi */
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero-leftbox h1 {
+    font-size: 30px;
+  }
+
+  .hero-leftbox h3 {
+    font-size: 18px;
+  }
+
+  .hero-leftbox p {
+    font-size: 15px;
+    margin: 0 auto 25px;
+  }
+
+  .hero-btns {
+    justify-content: center;
+  }
+
+  .hero-btn {
+    flex: none;
+    width: 100%;
+  }
+
+  .hero-rightbox img {
+    width: 220px;
+  }
 }

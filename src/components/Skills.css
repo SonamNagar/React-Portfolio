@@ -1,7 +1,14 @@
+/* =======================
+   SKILLS SECTION
+======================= */
+
 .containerskills {
   width: 100%;
-  padding: 50px 20px;
+  padding: 60px 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Heading */
@@ -10,51 +17,33 @@
   margin-bottom: 40px;
 }
 
-/* Skills boxes ko horizontal karne ke liye */
-.containerskills {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Dono skill box ko ek row me lane ke liye wrapper effect */
-.skills1,
-.skills2 {
-  width: 300px;
-  padding: 20px;
-  margin: 10px;
-  background: #f4f4f4;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  color: black;
-}
-
-/* Horizontal layout */
-.containerskills {
-  display: flex;
-  flex-direction: column;
-}
-
-.containerskills > .skills1,
-.containerskills > .skills2 {
-  display: inline-block;
-}
-
-/* Better Method (Recommended) */
-.containerskills {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
+/* Wrapper for both boxes */
 .skills-wrapper {
   display: flex;
   justify-content: center;
   gap: 30px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* important for mobile */
+  width: 100%;
 }
 
-/* Skills1 inner list */
+/* Skill Boxes */
+.skills1,
+.skills2 {
+  width: 320px;
+  padding: 25px;
+  background: #f4f4f4;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: black;
+  transition: 0.3s;
+}
+
+.skills1:hover,
+.skills2:hover {
+  transform: translateY(-5px);
+}
+
+/* Inner list spacing */
 .html div {
   margin: 8px 0;
 }
@@ -65,15 +54,18 @@
   margin-bottom: 10px;
 }
 
-/* ===== ADDITIONAL SKILLS SECTION ===== */
+
+/* =======================
+   ADDITIONAL SKILLS
+======================= */
 
 .additionalskills {
-  padding: 50px 10%;
+  padding: 60px 10%;
   background: #111827;
   color: white;
 }
 
-/* Additional Heading */
+/* Heading */
 .additionalskills h1 {
   text-align: center;
   font-size: 34px;
@@ -81,7 +73,7 @@
   color: #fbbf24;
 }
 
-/* Common Layout for add sections */
+/* Sections layout */
 .add1,
 .add2,
 .add3 {
@@ -89,6 +81,7 @@
   align-items: center;
   gap: 40px;
   margin-bottom: 50px;
+  flex-wrap: wrap; /* important for mobile */
 }
 
 /* Left Icon Box */
@@ -126,4 +119,79 @@
   margin-bottom: 8px;
   line-height: 1.6;
   font-size: 16px;
+}
+
+
+/* =======================
+   RESPONSIVE MEDIA QUERIES
+======================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .skills1,
+  .skills2 {
+    width: 280px;
+  }
+
+  .additionalskills {
+    padding: 50px 5%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .containerskills h1,
+  .additionalskills h1 {
+    font-size: 26px;
+  }
+
+  .skills-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skills1,
+  .skills2 {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .add1,
+  .add2,
+  .add3 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .para,
+  .para2,
+  .para3 {
+    text-align: center;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+
+  .containerskills {
+    padding: 40px 15px;
+  }
+
+  .skills1,
+  .skills2 {
+    padding: 20px;
+  }
+
+  .html img,
+  .html2 img,
+  .html3 img {
+    width: 60px;
+  }
+
+  .para p,
+  .para2 p,
+  .para3 p {
+    font-size: 14px;
+  }
 }
