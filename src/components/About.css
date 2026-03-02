@@ -1,0 +1,60 @@
+.about-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 60px 10%;
+  background: #111827;
+  color: white;
+}
+
+/* LEFT SIDE */
+.about-leftbox {
+  flex: 1;
+  text-align: center;
+}
+
+.about-leftbox h1 {
+  font-size: 38px;
+  margin-bottom: 20px;
+  color: #fbbf24;
+}
+
+.about-leftbox img {
+  width: 180px;
+  margin-bottom: 25px;
+}
+
+/* SKILL BUTTONS */
+.about-btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.about-btn-container button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background: #fbbf24;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.about-btn-container button:hover {
+  background: #eab308;
+}
+
+/* RIGHT SIDE */
+.about-rightbox {
+  flex: 1;
+}
+
+.about-rightbox p {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 500px;
+}

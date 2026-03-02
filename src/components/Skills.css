@@ -1,0 +1,129 @@
+.containerskills {
+  width: 100%;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+/* Heading */
+.containerskills h1 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+/* Skills boxes ko horizontal karne ke liye */
+.containerskills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Dono skill box ko ek row me lane ke liye wrapper effect */
+.skills1,
+.skills2 {
+  width: 300px;
+  padding: 20px;
+  margin: 10px;
+  background: #f4f4f4;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+/* Horizontal layout */
+.containerskills {
+  display: flex;
+  flex-direction: column;
+}
+
+.containerskills > .skills1,
+.containerskills > .skills2 {
+  display: inline-block;
+}
+
+/* Better Method (Recommended) */
+.containerskills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Skills1 inner list */
+.html div {
+  margin: 8px 0;
+}
+
+/* React image */
+.skills2 img {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+/* ===== ADDITIONAL SKILLS SECTION ===== */
+
+.additionalskills {
+  padding: 50px 10%;
+  background: #111827;
+  color: white;
+}
+
+/* Additional Heading */
+.additionalskills h1 {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 40px;
+  color: #fbbf24;
+}
+
+/* Common Layout for add sections */
+.add1,
+.add2,
+.add3 {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+/* Left Icon Box */
+.html,
+.html2,
+.html3 {
+  text-align: center;
+  min-width: 120px;
+}
+
+.html img,
+.html2 img,
+.html3 img {
+  width: 80px;
+  margin-bottom: 8px;
+}
+
+.html p,
+.html2 p,
+.html3 p {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* Right Text Box */
+.para,
+.para2,
+.para3 {
+  flex: 1;
+}
+
+.para p,
+.para2 p,
+.para3 p {
+  margin-bottom: 8px;
+  line-height: 1.6;
+  font-size: 16px;
+}

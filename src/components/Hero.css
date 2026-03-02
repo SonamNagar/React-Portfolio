@@ -1,0 +1,75 @@
+.hero-container {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 60px 10%;
+  background: #0f172a;
+  color: white;
+}
+
+/* LEFT SIDE */
+.hero-leftbox {
+  flex: 1;
+}
+
+.hero-leftbox h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero-highlight {
+  color: #fbbf24;
+ 
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.hero-leftbox h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #e5e7eb;
+}
+
+.hero-leftbox p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+/* BUTTONS */
+.hero-btns {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  flex: 1;
+  padding: 15px 30px;
+  min-width: 160px;
+  border: none;
+  border-radius: 8px;
+  background: #fbbf24;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: #eab308;
+}
+
+/* RIGHT SIDE */
+.hero-rightbox {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-rightbox img {
+  width: 280px;   /* Image thodi chhoti */
+  border-radius: 20px;
+}

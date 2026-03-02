@@ -1,0 +1,39 @@
+.navbar-container {
+  width: 100%;
+  background-color: #111827;
+  padding: 18px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* UL Styling */
+.navbar-container ul {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
+}
+
+/* Links */
+.navbar-container ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+/* Hover Effect */
+.navbar-container ul li a:hover {
+  color: #fbbf24;
+}
+
+/* Active NavLink */
+.navbar-container ul li a.active {
+  color: #fbbf24;
+  border-bottom: 2px solid #fbbf24;
+  padding-bottom: 4px;
+}
