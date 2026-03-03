@@ -2,34 +2,21 @@ import React, { useState } from "react";
 import "./Contact.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt, faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { useForm } from "react-hook-form";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: ""
-  });
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Message Sent Successfully ✅");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: ""
-    });
-  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors,isSubmitting },   // 👈 yaha se errors lena hai
+  } = useForm();
+
+ async function onSubmit(data){
+  await new Promise((resolve=>setTimeout(resolve,5000)))
+console.log('submitting form',data)
+ }
 
   return (
     <>
@@ -53,14 +40,31 @@ const Contact = () => {
           </div>
         </div>
 
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
           <h3>Contact Me</h3>
-          <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required />
-          <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required />
-          <input type="tel" name="phone" placeholder="Your Phone Number" value={formData.phone} onChange={handleChange} />
-          <input type="text" name="subject" placeholder="Subject" value={formData.subject} onChange={handleChange} />
-          <textarea name="message" placeholder="Your Message" value={formData.message} onChange={handleChange} required></textarea>
-          <button type="submit">Send Message</button>
+          <input type="text" name="name" placeholder="Your Name" {...register('name',{required:'Name is required',minLength:{value:3,message:'min length atleast 3'}})} />
+          {errors.name&&<p>{errors.name.message}</p>}
+          <input type="email" name="email" placeholder="Your Email" {...register("email", {
+          required: "Email is required",
+          pattern: {
+            value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+            message: "Enter a valid email address",
+          },
+        })} />
+        {errors.email && <p>{errors.email.message}</p>}
+          <input type="tel" name="phone" placeholder="Your Phone Number" {...register("phonenumber", {
+  required: "Phone number is required",
+  pattern: {
+    value: /^[0-9]{10}$/,
+    message: "Enter valid 10 digit number",
+  },
+})}/>
+          {errors.phonenumber && <p>{errors.phonenumber.message}</p>}
+          <input type="text" name="subject" placeholder="Subject" {...register('subject',{required:'enter valid subject name',minLength:{value:2,message:'atleast 6 letter'}})} />
+          {errors.subject && <p>{errors.subject.message}</p>}
+          <textarea name="message" placeholder="Your Message" {...register('message',{required:'message is required'})}></textarea>
+          {errors.message && <p>{errors.message.message}</p>}
+          <button type="submit" disabled={isSubmitting}>{isSubmitting?'isSubmitting':'submit'}</button>
         </form>
       </section>
       <footer class="footer">
