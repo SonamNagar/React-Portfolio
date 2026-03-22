@@ -11,6 +11,8 @@ import WeatherApp from './components/WeatherApp'
 import Clock from './components/Clock' 
 import CafeMenu from './components/CafeMenu'
 import Calculator from './components/Calculator'
+
+
 const router = createBrowserRouter(
   [
     {
@@ -89,11 +91,8 @@ const router = createBrowserRouter(
   ]
 )
 function App() {
-
-
   return (
-  <RouterProvider router={router}/>
+        <RouterProvider router={router} />
   )
 }
-
 export default App

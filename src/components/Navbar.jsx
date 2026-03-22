@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {NavLink} from 'react-router-dom'
 import './Navbar.css'
+
 const Navbar = () => {
+  
   return (
     <div className='navbar-container'>
       <ul>
@@ -12,6 +14,7 @@ const Navbar = () => {
        <li><NavLink to='/contact'>Contact</NavLink></li>
     
       </ul>
+
     </div>
   )
 }

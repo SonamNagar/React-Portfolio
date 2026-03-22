@@ -15,7 +15,7 @@ const WeatherApp = () => {
   const getWeatherData = async (cityName = "Indore") => {
     try {
       const res = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=0ff9ad87ea3011d887e6e7d07d869c61&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=fdbd386d46af179930af7427e4d6c42d&units=metric`
       );
       const data = await res.json();
       setWeather({
