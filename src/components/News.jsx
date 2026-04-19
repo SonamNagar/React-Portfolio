@@ -8,7 +8,7 @@ export default function News() {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
 
-    const API_KEY = import.meta.env.VITE_NEWS_API_KEY
+    
 
     async function getNewsData() {
         try {
@@ -17,7 +17,7 @@ export default function News() {
             setNews([])
 
             let res = await fetch(
-                `https://newsapi.org/v2/everything?q=${search}&sortBy=publishedAt&apiKey=${API_KEY}`
+                `https://newsapi.org/v2/everything?q=${search}&sortBy=publishedAt&apiKey=bceb6d71b4854378b4cd07d63717ad16`
             )
 
             let data = await res.json()
