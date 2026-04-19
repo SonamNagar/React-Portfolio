@@ -4,7 +4,7 @@ import './Hero.css';
 import reactimage from '../assets/reactimage.png'
 import weatherproject from '../assets/weatherproject.png';
 import digitalclock from '../assets/digitalclock.webp';
-import shop from '../assets/shop.webp';
+import news from '../assets/news.png'
 import calcu from '../assets/calcu.webp';
 import react from '../assets/react.svg'
 import htmllogo from '../assets/htmllogo.png'
@@ -75,8 +75,8 @@ const Hero = () => {
                 </div>
           
                 <div className="project-card">
-                  <h1>Destiny Cafe Menu Project</h1>
-                  <img src={shop} alt="" />
+                  <h1>News App Project</h1>
+                  <img src={news} alt="" />
                   <button >View Project</button>
                 </div>
           

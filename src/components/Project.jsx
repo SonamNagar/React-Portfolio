@@ -1,7 +1,7 @@
 import React from 'react';
 import weatherproject from '../assets/weatherproject.png';
 import digitalclock from '../assets/digitalclock.webp';
-import shop from '../assets/shop.webp';
+import news from '../assets/news.png'
 import calcu from '../assets/calcu.webp';
 import './Project.css';
 import { useNavigate } from 'react-router-dom';
@@ -28,8 +28,8 @@ const Project = () => {
       </div>
 
       <div className="project-card">
-        <h1>Destiny Cafe Menu Project</h1>
-        <img src={shop} alt="" />
+        <h1>News App Project</h1>
+       <img src={news} alt="" />
         <button onClick={() => handleClick('/cafe')}>View Project</button>
       </div>
 

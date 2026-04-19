@@ -9,8 +9,9 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import WeatherApp from './components/WeatherApp'
 import Clock from './components/Clock' 
-import CafeMenu from './components/CafeMenu'
+
 import Calculator from './components/Calculator'
+import News from './components/News';
 
 
 const router = createBrowserRouter(
@@ -77,7 +78,7 @@ const router = createBrowserRouter(
       element:
       <div>
         <Navbar/>
-        <CafeMenu/>
+        <News/>
       </div>
     },
       {
