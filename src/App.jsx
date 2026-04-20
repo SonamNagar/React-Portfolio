@@ -11,7 +11,7 @@ import WeatherApp from './components/WeatherApp'
 import Clock from './components/Clock' 
 
 import Calculator from './components/Calculator'
-import News from './components/News';
+
 
 
 
@@ -83,14 +83,7 @@ const router = createBrowserRouter(
       </div>
     },
 
-     {
-      path:'/news',
-      element:
-      <div>
-        <Navbar/>
-        <News/>
-      </div>
-    },
+    
   ]
 )
 function App() {
