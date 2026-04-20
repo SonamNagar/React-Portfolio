@@ -1,0 +1,153 @@
+/* ========== THEME VARIABLES ========== */
+:root {
+    --bg: #f3f4f6;
+    --text: #111827;
+    --card-bg: #ffffff;
+    --border: #ccc;
+    --primary: #3b82f6;
+    --secondary-text: #555;
+}
+
+/* Dark Mode */
+body.dark {
+    --bg: #111827;
+    --text: #f9fafb;
+    --card-bg: #1f2937;
+    --border: #374151;
+    --primary: #60a5fa;
+    --secondary-text: #d1d5db;
+}
+
+/* ========== GLOBAL ========== */
+.container {
+    padding: 20px;
+    background: var(--bg);
+    min-height: 100vh;
+    color: var(--text);
+    transition: 0.3s;
+}
+
+/* ========== HEADER ========== */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h2 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.header p {
+    color: var(--secondary-text);
+    font-size: 14px;
+}
+
+/* ========== SEARCH ========== */
+.search-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.search-form input {
+    padding: 8px;
+    width: 250px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: var(--card-bg);
+    color: var(--text);
+}
+
+.search-form button {
+    padding: 8px 15px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-form button:disabled {
+    opacity: 0.5;
+}
+
+/* ========== LOADER ========== */
+.loader {
+    margin: 50px auto;
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--primary);
+    border-top: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ========== STATES ========== */
+.error {
+    text-align: center;
+    color: red;
+}
+
+.empty {
+    text-align: center;
+    color: var(--secondary-text);
+}
+
+/* ========== GRID ========== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* ========== CARD ========== */
+.card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-body h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.card-body p {
+    font-size: 14px;
+    color: var(--secondary-text);
+}
+
+.card-body a {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.card-body a:hover {
+    text-decoration: underline;
+}

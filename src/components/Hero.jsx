@@ -6,6 +6,7 @@ import weatherproject from '../assets/weatherproject.png';
 import digitalclock from '../assets/digitalclock.webp';
 import calcu from '../assets/calcu.webp';
 import react from '../assets/react.svg'
+import news from '../assets/news.png'
 import htmllogo from '../assets/htmllogo.png'
 import javascriptlogo from '../assets/javascriptlogo.png'
 import CSSlogo from '../assets/CSSlogo.png'
@@ -72,7 +73,11 @@ const Hero = () => {
                   <img src={digitalclock} alt="" />
                   <button >View Project</button>
                 </div>
-          
+           <div className="project-card">
+                  <h1>News App Project</h1>
+                  <img src={news} alt="" />
+                  <button >View Project</button>
+                </div>
               
           
                 <div className="project-card">
