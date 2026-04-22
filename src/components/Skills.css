@@ -3,124 +3,176 @@
 ======================= */
 
 .containerskills {
-  width: 100%;
-  padding: 60px 20px;
+  padding: 6rem 10%;
+  max-width: 1400px;
+  margin: 0 auto;
   text-align: center;
+}
+
+.containerskills h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 4rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.skills1 {
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 32px;
+  padding: 3rem;
+  margin-bottom: 4rem;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.skills1:hover {
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.skills1 h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+.html {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.html div {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.html div:hover {
+  background: rgba(168, 85, 247, 0.1);
+  border-color: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+.skills2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1.5rem;
+  background: var(--card-bg);
+  padding: 3rem;
+  border-radius: 32px;
+  border: 1px solid var(--glass-border);
 }
 
-/* Heading */
-.containerskills h1 {
-  font-size: 32px;
-  margin-bottom: 40px;
-}
-
-/* Wrapper for both boxes */
-.skills-wrapper {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap; /* important for mobile */
-  width: 100%;
-}
-
-/* Skill Boxes */
-.skills1,
-.skills2 {
-  width: 320px;
-  padding: 25px;
-  background: #f4f4f4;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  color: black;
-  transition: 0.3s;
-}
-
-.skills1:hover,
-.skills2:hover {
-  transform: translateY(-5px);
-}
-
-/* Inner list spacing */
-.html div {
-  margin: 8px 0;
-}
-
-/* React image */
 .skills2 img {
   width: 80px;
-  margin-bottom: 10px;
+  filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.4));
 }
 
+.skills2 p {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
 
-/* =======================
-   ADDITIONAL SKILLS
-======================= */
-
+/* Additional Skills Section */
 .additionalskills {
-  padding: 60px 10%;
-  background: #111827;
-  color: white;
+  padding: 8rem 10%;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-/* Heading */
 .additionalskills h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 4rem;
   text-align: center;
-  font-size: 34px;
-  margin-bottom: 40px;
-  color: #fbbf24;
+  background: linear-gradient(135deg, #fff 0%, var(--text-muted) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Sections layout */
-.add1,
-.add2,
-.add3 {
+.add1, .add2, .add3 {
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 32px;
+  padding: 3rem;
   display: flex;
+  gap: 4rem;
+  margin-bottom: 3rem;
   align-items: center;
-  gap: 40px;
-  margin-bottom: 50px;
-  flex-wrap: wrap; /* important for mobile */
+  transition: all 0.4s ease;
 }
 
-/* Left Icon Box */
-.html,
-.html2,
-.html3 {
+.add1:hover, .add2:hover, .add3:hover {
+  transform: translateY(-5px);
+  border-color: rgba(168, 85, 247, 0.2);
+  box-shadow: var(--shadow-lg);
+}
+
+.html, .html2, .html3 {
+  flex: 0.3;
   text-align: center;
-  min-width: 120px;
 }
 
-.html img,
-.html2 img,
-.html3 img {
-  width: 80px;
-  margin-bottom: 8px;
+.html img, .html2 img, .html3 img {
+  width: 70px;
+  margin-bottom: 1rem;
+  filter: grayscale(1) brightness(1.5);
+  transition: all 0.3s ease;
 }
 
-.html p,
-.html2 p,
-.html3 p {
-  font-weight: 600;
-  font-size: 18px;
+.add1:hover img, .add2:hover img, .add3:hover img {
+  filter: grayscale(0) brightness(1);
 }
 
-/* Right Text Box */
-.para,
-.para2,
-.para3 {
-  flex: 1;
+.para, .para2, .para3 {
+  flex: 0.7;
 }
 
-.para p,
-.para2 p,
-.para3 p {
-  margin-bottom: 8px;
-  line-height: 1.6;
-  font-size: 16px;
+.para p, .para2 p, .para3 p {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  position: relative;
+  padding-left: 1.5rem;
 }
 
+.para p::before, .para2 p::before, .para3 p::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+@media (max-width: 992px) {
+  .add1, .add2, .add3 {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .para p, .para2 p, .para3 p {
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .containerskills, .additionalskills {
+    padding: 4rem 1.5rem;
+  }
+  
+  .skills1, .add1, .add2, .add3 {
+    padding: 2rem;
+  }
+}
 
 /* =======================
    RESPONSIVE MEDIA QUERIES

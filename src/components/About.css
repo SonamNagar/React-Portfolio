@@ -1,143 +1,126 @@
-/* ========================= */
-/* ABOUT SECTION - MAIN STYLING */
-/* ========================= */
 .about-container {
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 60px;
-  padding: 60px 10%;
-  background: #111827;
-  color: white;
-  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  gap: 6rem;
+  padding: 8rem 10%;
+  flex-wrap: wrap;
 }
 
-/* ----------------- LEFT SIDE ----------------- */
 .about-leftbox {
   flex: 1;
+  min-width: 300px;
   text-align: center;
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .about-leftbox h1 {
-  font-size: 38px;
-  margin-bottom: 20px;
-  color: #fbbf24;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
 }
 
 .about-leftbox img {
-  width: 180px;
-  margin-bottom: 25px;
-  max-width: 100%; /* Makes image responsive */
+  width: 100%;
+  max-width: 440px;
+  border-radius: 32px;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 2.5rem;
+  border: 1px solid var(--glass-border);
+  transition: transform 0.5s ease;
 }
 
-/* ----------------- SKILL BUTTONS ----------------- */
+.about-leftbox img:hover {
+  transform: scale(1.02);
+}
+
 .about-btn-container {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 1.25rem;
   flex-wrap: wrap;
 }
 
 .about-btn-container button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  background: #fbbf24;
+  padding: 0.75rem 1.75rem;
+  border-radius: 50px;
+  border: 1px solid var(--glass-border);
+  background: rgba(168, 85, 247, 0.05);
+  color: var(--text-main);
   font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s ease;
+  font-size: 0.9rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .about-btn-container button:hover {
-  background: #eab308;
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(168, 85, 247, 0.3);
 }
 
-/* ----------------- RIGHT SIDE ----------------- */
 .about-rightbox {
-  flex: 1;
+  flex: 1.2;
+  min-width: 300px;
+  animation: fadeIn 1s ease-out forwards;
 }
 
 .about-rightbox p {
-  font-size: 18px;
-  line-height: 1.7;
-  max-width: 500px;
-  margin: 0 auto;
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  letter-spacing: 0.01em;
 }
 
-/* ========================= */
-/* RESPONSIVE STYLING */
-/* ========================= */
-
-/* Tablets - 1024px and below */
 @media (max-width: 1024px) {
   .about-container {
-    gap: 40px;
-    padding: 50px 5%;
-  }
-
-  .about-leftbox h1 {
-    font-size: 32px;
-  }
-
-  .about-rightbox p {
-    font-size: 16px;
-    max-width: 100%;
-  }
-
-  .about-leftbox img {
-    width: 150px;
+    gap: 4rem;
+    padding: 6rem 5%;
   }
 }
 
-/* Mobile - 768px and below */
 @media (max-width: 768px) {
   .about-container {
     flex-direction: column;
-    gap: 30px;
-    padding: 40px 5%;
-  }
-
-  .about-leftbox h1 {
-    font-size: 28px;
+    text-align: center;
+    padding: 4rem 1.5rem;
   }
 
   .about-leftbox img {
-    width: 120px;
+    max-width: 300px;
   }
 
   .about-btn-container button {
-    padding: 8px 16px;
-    font-size: 14px;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.85rem;
   }
 
   .about-rightbox p {
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 1.125rem;
+    line-height: 1.7;
   }
 }
 
-/* Small Mobile - 480px and below */
 @media (max-width: 480px) {
   .about-leftbox h1 {
-    font-size: 24px;
+    font-size: 2rem;
   }
 
   .about-leftbox img {
-    width: 100px;
+    max-width: 240px;
   }
 
   .about-btn-container {
-    gap: 10px;
+    gap: 0.75rem;
   }
 
   .about-btn-container button {
-    padding: 6px 12px;
-    font-size: 13px;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
   }
-
-  .about-rightbox p {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-}
+}

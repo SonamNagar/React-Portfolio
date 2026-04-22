@@ -1,25 +1,55 @@
-/* Main Container */
 .clock-container {
-  min-height: 100vh;
+  height: calc(100vh - var(--nav-height));
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #0f172a;
-  padding: 20px; /* mobile ke liye spacing */
 }
 
-/* Clock Box */
-.clock {
-  font-size: clamp(28px, 8vw, 60px); /* Responsive font */
-  font-weight: bold;
-  color: #fbbf24;
-  background: #111827;
-  padding: clamp(20px, 5vw, 40px) clamp(30px, 6vw, 60px);
-  border-radius: 15px;
-  letter-spacing: clamp(2px, 1vw, 4px);
-  box-shadow: 0 0 25px rgba(251, 191, 36, 0.5);
-  font-family: 'Courier New', monospace;
+.clock-box {
+  background: var(--card-bg);
+  padding: 4rem;
+  border-radius: 40px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.7);
   text-align: center;
-  width: 100%;
-  max-width: 500px;
+  position: relative;
+}
+
+.clock-box::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-radius: 42px;
+  z-index: -1;
+  opacity: 0.5;
+  filter: blur(10px);
+}
+
+.clock-time {
+  font-size: 7rem;
+  font-weight: 800;
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 40px rgba(168, 85, 247, 0.4);
+}
+
+.clock-date {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 600px) {
+  .clock-time {
+    font-size: 3rem;
+  }
+  
+  .clock-box {
+    padding: 2rem;
+  }
 }

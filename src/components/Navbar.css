@@ -1,77 +1,87 @@
-/* Navbar Container */
 .navbar-container {
   width: 100%;
-  background-color: #111827;
-  padding: 18px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-/* UL Styling */
-.navbar-container ul {
-  width: 90%;
-  margin: auto;
+  height: var(--nav-height);
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--glass-border);
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  list-style: none;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Links */
+.navbar-container ul {
+  display: flex;
+  gap: 2.5rem;
+  padding: 0 2rem;
+  align-items: center;
+}
+
 .navbar-container ul li a {
-  text-decoration: none;
-  color: white;
+  font-size: 0.95rem;
   font-weight: 500;
-  font-size: 16px;
-  transition: 0.3s ease;
+  color: var(--text-muted);
+  position: relative;
+  padding: 0.5rem 0;
+  letter-spacing: 0.01em;
 }
 
-/* Hover Effect */
 .navbar-container ul li a:hover {
-  color: #fbbf24;
+  color: var(--text-main);
 }
 
-/* Active NavLink */
 .navbar-container ul li a.active {
-  color: #fbbf24;
-  border-bottom: 2px solid #fbbf24;
-  padding-bottom: 4px;
+  color: var(--primary-color);
+  font-weight: 600;
 }
 
+.navbar-container ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
 
-/* ========================= */
-/* Responsive Design */
-/* ========================= */
+.navbar-container ul li a:hover::after,
+.navbar-container ul li a.active::after {
+  width: 100%;
+}
 
-/* Tablet */
 @media (max-width: 768px) {
-  .navbar-container ul {
-    gap: 25px;
+  .navbar-container {
+    height: 70px;
   }
 
+  .navbar-container ul {
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
   .navbar-container ul li a {
-    font-size: 15px;
+    font-size: 0.875rem;
   }
 }
 
-/* Mobile */
 @media (max-width: 480px) {
   .navbar-container {
-    padding: 15px 0;
+    height: auto;
+    padding: 1rem 0;
   }
-
+  
   .navbar-container ul {
-    flex-direction: column;
-    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.5rem;
   }
-
-  .navbar-container ul li a {
-    font-size: 14px;
-  }
-}
-.theme{
-
-margin-left: 69rem;
-}
+}

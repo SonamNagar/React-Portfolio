@@ -1,93 +1,94 @@
-/* Calculator Container */
-.calc{
+.calc {
   width: 100%;
-  max-width: 350px;
-  margin: 50px auto; /* component ke andar center */
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  max-width: 380px;
+  margin: 100px auto;
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 32px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
 }
 
-/* Display */
-.calc #display{
+.calc #display {
   width: 100%;
-  height: 60px;
-  border: none;
+  height: 90px;
+  border: 1px solid var(--glass-border);
   outline: none;
-  border-radius: 12px;
-  background: #f1f3f6;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  color: white;
   text-align: right;
-  padding: 10px 15px;
-  font-size: 24px;
-  margin-bottom: 15px;
+  padding: 0 1.5rem;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  font-family: inherit;
+  letter-spacing: -0.02em;
 }
 
-/* Button Grid */
-.calc .calc-btnContainer{
+.calc .calc-btnContainer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 1rem;
 }
 
-/* All Buttons */
-.calc button{
-  height: 55px;
+.calc button {
+  height: 65px;
   border: none;
-  border-radius: 12px;
-  font-size: 18px;
+  border-radius: 16px;
+  font-size: 1.25rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Number Buttons */
-.calc .calc-num{
-  background: #f1f3f6;
+.calc button:active {
+  transform: scale(0.95);
 }
 
-.calc .calc-num:hover{
-  background: #e2e6ea;
+.calc .calc-num {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
 }
 
-/* Operator Buttons */
-.calc .calc-op{
-  background: #667eea;
-  color: #fff;
+.calc .calc-num:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
 
-.calc .calc-op:hover{
-  background: #5563d6;
+.calc .calc-op {
+  background: var(--primary-color);
+  color: white;
 }
 
-/* Function Buttons (AC, DEL, SQ) */
-.calc .calc-function{
-  background: #ff7675;
-  color: #fff;
+.calc .calc-op:hover {
+  background: var(--primary-hover);
+  box-shadow: 0 0 15px var(--primary-color);
+  transform: translateY(-2px);
 }
 
-.calc .calc-function:hover{
-  background: #e05655;
+.calc .calc-function {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ff4757;
 }
 
-/* Zero button double width */
-.calc .calc-zero{
+.calc .calc-function:hover {
+  background: #ff4757;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.calc .calc-zero {
   grid-column: span 2;
 }
 
-/* Responsive for small devices */
-@media (max-width: 400px){
-  .calc{
-    padding: 15px;
-    border-radius: 15px;
+@media (max-width: 480px) {
+  .calc {
+    padding: 1.5rem;
+    margin: 50px 1rem;
   }
-
-  .calc #display{
-    height: 50px;
-    font-size: 20px;
-  }
-
-  .calc button{
-    height: 45px;
-    font-size: 16px;
-  }
-}
+}
