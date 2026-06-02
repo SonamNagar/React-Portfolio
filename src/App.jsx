@@ -9,7 +9,7 @@ import Footer from './components/Footer'
 import About from './pages/About'
 import Calculator from './pages/Calculator'
 import Clock from './pages/Clock'
-import WeatherApp from './pages/WeatherAPP'
+import WeatherApp from './pages/WeatherApp'
 import DestinyProject from "./pages/Destiny";
 export default function App() {
   return (
