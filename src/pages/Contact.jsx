@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
+import gif from "../assets/gif.gif";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -70,125 +71,100 @@ const Contact = () => {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-r from-blue-50 via-white to-purple-50 dark:from-gray-950 dark:to-gray-900 flex items-center justify-center px-6 py-12">
+    <section className="relative min-h-screen flex items-center justify-center px-6 py-12 overflow-hidden text-white">
 
-      <div className="max-w-6xl w-full grid md:grid-cols-2 gap-10">
+      {/* 🔥 BACKGROUND GIF */}
+      <div
+        className="fixed inset-0 -z-10 bg-cover bg-center opacity-25"
+        style={{ backgroundImage: `url(${gif})` }}
+      />
+
+      {/* 🔥 DARK OVERLAY */}
+      <div className="fixed inset-0 bg-black/70 -z-10"></div>
+
+      {/* 👇 ORIGINAL CONTENT (NO DATA REMOVED) */}
+      <div className="relative z-10 max-w-6xl w-full grid md:grid-cols-2 gap-10">
 
         {/* LEFT SIDE */}
-        <div className="space-y-6 animate-[fadeInLeft_1s_ease-in-out]">
+        <div className="space-y-6">
 
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
-            Get In <span className="text-blue-500">Touch</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
+            Get In <span className="text-blue-400">Touch</span>
           </h2>
 
-          <p className="text-gray-600 dark:text-gray-300 text-lg">
+          <p className="text-gray-300 text-lg">
             Have a project in mind or want to work together?
             Feel free to contact me anytime.
           </p>
 
-          <div className="space-y-4 text-gray-700 dark:text-gray-300">
+          <div className="space-y-4">
 
-            <div className="flex items-center gap-3 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:translate-x-2 transition duration-300">
-              <Mail className="text-blue-500" size={22} />
-              <a
-                href="mailto:sonamnagar115@gmail.com"
-                className="hover:text-blue-500 hover:underline"
-              >
+            <div className="flex items-center gap-3 p-4 bg-white/10 backdrop-blur-xl rounded-xl shadow-md hover:translate-x-2 transition duration-300">
+              <Mail className="text-blue-400" size={22} />
+              <a href="mailto:sonamnagar115@gmail.com" className="hover:text-blue-400">
                 sonamnagar115@gmail.com
               </a>
             </div>
 
-            <div className="flex items-center gap-3 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:translate-x-2 transition duration-300">
-              <Phone className="text-green-500" size={22} />
-              <a
-                href="tel:+917067414199"
-                className="hover:text-green-500"
-              >
+            <div className="flex items-center gap-3 p-4 bg-white/10 backdrop-blur-xl rounded-xl shadow-md hover:translate-x-2 transition duration-300">
+              <Phone className="text-green-400" size={22} />
+              <a href="tel:+917067414199" className="hover:text-green-400">
                 +91 7067414199
               </a>
             </div>
 
-            <div className="flex items-center gap-3 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:translate-x-2 transition duration-300">
-              <MapPin className="text-red-500" size={22} />
+            <div className="flex items-center gap-3 p-4 bg-white/10 backdrop-blur-xl rounded-xl shadow-md hover:translate-x-2 transition duration-300">
+              <MapPin className="text-red-400" size={22} />
               <span>Indore, Madhya Pradesh, India</span>
             </div>
 
           </div>
+
         </div>
 
         {/* FORM */}
         <form
           onSubmit={handleSubmit}
-          className="bg-white dark:bg-gray-900 shadow-xl rounded-2xl p-6 space-y-4 border border-gray-200 dark:border-gray-700 animate-[fadeInRight_1s_ease-in-out]"
+          className="bg-white/10 backdrop-blur-xl shadow-xl rounded-2xl p-6 space-y-4 border border-white/20"
         >
 
-          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
+          <h3 className="text-2xl font-semibold text-white">
             Contact Me 🚀
           </h3>
 
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
-            className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          {errors.name && (
-            <p className="text-red-500 text-sm">{errors.name}</p>
-          )}
-
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          {errors.email && (
-            <p className="text-red-500 text-sm">{errors.email}</p>
-          )}
-
-          <input
-            type="tel"
-            name="phonenumber"
-            placeholder="Phone Number"
-            value={formData.phonenumber}
-            onChange={handleChange}
-            className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          {errors.phonenumber && (
-            <p className="text-red-500 text-sm">{errors.phonenumber}</p>
-          )}
-
-          <input
-            type="text"
-            name="subject"
-            placeholder="Subject"
-            value={formData.subject}
-            onChange={handleChange}
-            className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          {errors.subject && (
-            <p className="text-red-500 text-sm">{errors.subject}</p>
-          )}
+          {/* INPUTS (UNCHANGED LOGIC) */}
+          {["name", "email", "phonenumber", "subject"].map((field, i) => (
+            <div key={i}>
+              <input
+                type="text"
+                name={field}
+                placeholder={`Your ${field}`}
+                value={formData[field]}
+                onChange={handleChange}
+                className="w-full p-3 rounded-lg bg-black/30 text-white border border-gray-600 focus:ring-2 focus:ring-blue-400 outline-none"
+              />
+              {errors[field] && (
+                <p className="text-red-400 text-sm">{errors[field]}</p>
+              )}
+            </div>
+          ))}
 
           <textarea
             name="message"
             placeholder="Your Message"
             value={formData.message}
             onChange={handleChange}
-            className="w-full p-3 h-32 rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 h-32 rounded-lg bg-black/30 text-white border border-gray-600 focus:ring-2 focus:ring-blue-400 outline-none"
           />
+
           {errors.message && (
-            <p className="text-red-500 text-sm">{errors.message}</p>
+            <p className="text-red-400 text-sm">{errors.message}</p>
           )}
 
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full py-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold hover:scale-105 transition duration-300"
+            className="w-full py-3 rounded-lg bg-blue-500 hover:bg-blue-600 hover:scale-105 transition duration-300 font-semibold"
           >
             {isSubmitting ? "Submitting..." : "Send Message"}
           </button>

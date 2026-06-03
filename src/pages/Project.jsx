@@ -1,9 +1,9 @@
-import React from 'react'
-import calculator from '../assets/calculator.png'
-import DigitalClock from '../assets/digital.webp'
-import weather from '../assets/weather.png'
-import Destiny from '../assets/library.jpg'
-import { useNavigate } from "react-router-dom"
+import React from "react";
+import calculator from "../assets/calculator.png";
+import DigitalClock from "../assets/digital.webp";
+import weather from "../assets/weather.png";
+import Destiny from "../assets/library.jpg";
+import { useNavigate } from "react-router-dom";
 
 export default function Project() {
   const navigate = useNavigate();
@@ -32,15 +32,17 @@ export default function Project() {
   ];
 
   return (
-    <>
-      <div className="px-6 md:px-16 py-16 bg-white dark:bg-gray-900 overflow-hidden animate-fadeIn">
+    <section className="relative min-h-screen px-6 md:px-16 py-16 overflow-hidden text-white">
+
+      {/* 🔥 GLASS CONTAINER */}
+      <div className="bg-white/5 border border-white/10 shadow-2xl rounded-2xl p-8">
 
         {/* TITLE */}
-        <h1 className="text-4xl md:text-5xl font-bold text-center text-blue-600">
+        <h1 className="text-4xl md:text-5xl font-bold text-center text-blue-400">
           Projects
         </h1>
 
-        <p className="text-center text-gray-600 dark:text-gray-300 mt-3 mb-12 max-w-2xl mx-auto">
+        <p className="text-center text-gray-200 mt-3 mb-12 max-w-2xl mx-auto">
           Some of the work I have built using React, JavaScript and modern UI design.
         </p>
 
@@ -50,9 +52,10 @@ export default function Project() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-800 rounded-3xl shadow-lg overflow-hidden hover:-translate-y-3 hover:scale-105 hover:shadow-2xl transition duration-300 group"
+              className="bg-white/5 border border-white/10 rounded-2xl shadow-lg overflow-hidden hover:-translate-y-3 hover:scale-105 hover:shadow-2xl transition duration-300 group"
             >
-              {/* Image */}
+
+              {/* IMAGE */}
               <div className="overflow-hidden">
                 <img
                   src={project.image}
@@ -61,10 +64,10 @@ export default function Project() {
                 />
               </div>
 
-              {/* Content */}
+              {/* CONTENT */}
               <div className="p-5 text-center space-y-4">
 
-                <h2 className="text-xl font-bold text-gray-800 dark:text-white group-hover:text-blue-500 transition">
+                <h2 className="text-xl font-bold text-white group-hover:text-blue-400 transition">
                   {project.title}
                 </h2>
 
@@ -76,6 +79,7 @@ export default function Project() {
                 </button>
 
               </div>
+
             </div>
           ))}
 
@@ -83,25 +87,6 @@ export default function Project() {
 
       </div>
 
-      {/* Animation */}
-      <style>
-        {`
-          @keyframes fadeIn {
-            from {
-              opacity: 0;
-              transform: translateY(40px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-
-          .animate-fadeIn {
-            animation: fadeIn 1s ease-out;
-          }
-        `}
-      </style>
-    </>
-  )
+    </section>
+  );
 }

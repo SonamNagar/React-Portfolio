@@ -23,30 +23,36 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg border-b border-gray-200 dark:border-gray-700 transition-colors">
+    <nav className="sticky top-0 z-50 bg-transparent backdrop-blur-md border-b border-white/10 transition-colors">
+      
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
-          <div className="w-11 h-11 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-xl">
+          
+          <div className="w-11 h-11 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-500/30">
             S
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-gray-800 dark:text-white">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white">
               Sonam Nagar
             </h2>
-            <p className="text-xs text-gray-500 dark:text-gray-400">
+            <p className="text-xs text-gray-600 dark:text-gray-400">
               Frontend Developer
             </p>
           </div>
+
         </Link>
 
         {/* Desktop Links */}
-        <ul className="hidden md:flex gap-8 text-lg font-medium text-gray-800 dark:text-white">
+        <ul className="hidden md:flex gap-8 text-lg font-medium text-gray-900 dark:text-white">
           {navLinks.map((item) => (
             <li key={item.name}>
-              <Link className="hover:text-blue-500 transition" to={item.path}>
+              <Link
+                to={item.path}
+                className="hover:text-blue-400 transition duration-300 hover:scale-105"
+              >
                 {item.name}
               </Link>
             </li>
@@ -62,7 +68,7 @@ export default function Navbar() {
             className={`px-4 py-2 rounded-full font-semibold shadow-md transition-all duration-300 ${
               darkMode
                 ? "bg-yellow-400 text-black hover:bg-yellow-300"
-                : "bg-gray-800 text-white hover:bg-black"
+                : "bg-gray-900 text-white hover:bg-black"
             }`}
           >
             {darkMode ? "☀ Light" : "🌙 Dark"}
@@ -70,23 +76,24 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-800 dark:text-white"
+            className="md:hidden text-gray-900 dark:text-white"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
+
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden px-6 pb-4 space-y-4 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+        <div className="md:hidden px-6 pb-4 space-y-4 bg-white/5 dark:bg-black/30 backdrop-blur-xl border-t border-white/10">
           {navLinks.map((item) => (
             <Link
               key={item.name}
               to={item.path}
               onClick={() => setIsOpen(false)}
-              className="block text-gray-800 dark:text-white hover:text-blue-500"
+              className="block text-gray-900 dark:text-white hover:text-blue-400 transition"
             >
               {item.name}
             </Link>
