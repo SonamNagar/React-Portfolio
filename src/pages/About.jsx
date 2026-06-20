@@ -24,7 +24,7 @@ const About = () => {
           {/* HIGHLIGHT BOX */}
           <div className="p-5 rounded-xl bg-white/5 border border-white/10">
             <p className="text-gray-200">
-              🚀 I focus on performance, UI design, and reusable components for
+               I focus on performance, UI design, and reusable components for
               scalable applications.
             </p>
           </div>
