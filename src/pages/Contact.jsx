@@ -129,7 +129,7 @@ const Contact = () => {
         >
 
           <h3 className="text-2xl font-semibold text-white">
-            Contact Me 🚀
+            Contact Me 
           </h3>
 
           {/* INPUTS (UNCHANGED LOGIC) */}
